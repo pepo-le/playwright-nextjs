@@ -1,17 +1,17 @@
-import { PrismaClient } from '@prisma/client'
-declare let global: { prisma: PrismaClient }
+import { PrismaClient } from '@prisma/client';
+declare let global: { prisma: PrismaClient };
 
-let prisma: PrismaClient
+let prisma: PrismaClient;
 
 if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient()
+  prisma = new PrismaClient();
 } else {
   if (!global.prisma) {
-    global.prisma = new PrismaClient()
+    global.prisma = new PrismaClient();
   }
-  prisma = global.prisma
+  prisma = global.prisma;
 }
-export default prisma
+export default prisma;
 
 // Learn more:
 // https://github.com/prisma/prisma-examples/blob/latest/typescript/rest-nextjs-api-routes-auth/lib/prisma.ts
