@@ -11,7 +11,7 @@ export default function MonitorSession() {
     if (!session) {
       router.refresh();
     }
-  }, [session]);
+  }, [session, router]);
 
   return null;
 }
